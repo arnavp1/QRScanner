@@ -6,27 +6,8 @@
 	objectVersion = 77;
 	objects = {
 
-/* Begin PBXContainerItemProxy section */
-		47D823F82D7125F80092B139 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 47D823DE2D7125F50092B139 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 47D823E52D7125F50092B139;
-			remoteInfo = QRScanner;
-		};
-		47D824022D7125F80092B139 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 47D823DE2D7125F50092B139 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 47D823E52D7125F50092B139;
-			remoteInfo = QRScanner;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		47D823E62D7125F50092B139 /* QRScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QRScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		47D823F72D7125F80092B139 /* QRScannerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QRScannerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		47D824012D7125F80092B139 /* QRScannerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QRScannerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		474289BE2D7172C1000580C6 /* QRScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QRScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -35,34 +16,10 @@
 			path = QRScanner;
 			sourceTree = "<group>";
 		};
-		47D823FA2D7125F80092B139 /* QRScannerTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = QRScannerTests;
-			sourceTree = "<group>";
-		};
-		47D824042D7125F80092B139 /* QRScannerUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = QRScannerUITests;
-			sourceTree = "<group>";
-		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		47D823E32D7125F50092B139 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		47D823F42D7125F80092B139 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		47D823FE2D7125F80092B139 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -76,20 +33,8 @@
 			isa = PBXGroup;
 			children = (
 				47D823E82D7125F50092B139 /* QRScanner */,
-				47D823FA2D7125F80092B139 /* QRScannerTests */,
-				47D824042D7125F80092B139 /* QRScannerUITests */,
-				47D823E72D7125F50092B139 /* Products */,
+				474289BE2D7172C1000580C6 /* QRScanner.app */,
 			);
-			sourceTree = "<group>";
-		};
-		47D823E72D7125F50092B139 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				47D823E62D7125F50092B139 /* QRScanner.app */,
-				47D823F72D7125F80092B139 /* QRScannerTests.xctest */,
-				47D824012D7125F80092B139 /* QRScannerUITests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -111,57 +56,9 @@
 				47D823E82D7125F50092B139 /* QRScanner */,
 			);
 			name = QRScanner;
-			packageProductDependencies = (
-			);
 			productName = QRScanner;
-			productReference = 47D823E62D7125F50092B139 /* QRScanner.app */;
+			productReference = 474289BE2D7172C1000580C6 /* QRScanner.app */;
 			productType = "com.apple.product-type.application";
-		};
-		47D823F62D7125F80092B139 /* QRScannerTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 47D8240E2D7125F80092B139 /* Build configuration list for PBXNativeTarget "QRScannerTests" */;
-			buildPhases = (
-				47D823F32D7125F80092B139 /* Sources */,
-				47D823F42D7125F80092B139 /* Frameworks */,
-				47D823F52D7125F80092B139 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				47D823F92D7125F80092B139 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				47D823FA2D7125F80092B139 /* QRScannerTests */,
-			);
-			name = QRScannerTests;
-			packageProductDependencies = (
-			);
-			productName = QRScannerTests;
-			productReference = 47D823F72D7125F80092B139 /* QRScannerTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		47D824002D7125F80092B139 /* QRScannerUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 47D824112D7125F80092B139 /* Build configuration list for PBXNativeTarget "QRScannerUITests" */;
-			buildPhases = (
-				47D823FD2D7125F80092B139 /* Sources */,
-				47D823FE2D7125F80092B139 /* Frameworks */,
-				47D823FF2D7125F80092B139 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				47D824032D7125F80092B139 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				47D824042D7125F80092B139 /* QRScannerUITests */,
-			);
-			name = QRScannerUITests;
-			packageProductDependencies = (
-			);
-			productName = QRScannerUITests;
-			productReference = 47D824012D7125F80092B139 /* QRScannerUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -176,14 +73,6 @@
 					47D823E52D7125F50092B139 = {
 						CreatedOnToolsVersion = 16.2;
 					};
-					47D823F62D7125F80092B139 = {
-						CreatedOnToolsVersion = 16.2;
-						TestTargetID = 47D823E52D7125F50092B139;
-					};
-					47D824002D7125F80092B139 = {
-						CreatedOnToolsVersion = 16.2;
-						TestTargetID = 47D823E52D7125F50092B139;
-					};
 				};
 			};
 			buildConfigurationList = 47D823E12D7125F50092B139 /* Build configuration list for PBXProject "QRScanner" */;
@@ -196,33 +85,17 @@
 			mainGroup = 47D823DD2D7125F50092B139;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 47D823E72D7125F50092B139 /* Products */;
+			productRefGroup = 47D823DD2D7125F50092B139;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				47D823E52D7125F50092B139 /* QRScanner */,
-				47D823F62D7125F80092B139 /* QRScannerTests */,
-				47D824002D7125F80092B139 /* QRScannerUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		47D823E42D7125F50092B139 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		47D823F52D7125F80092B139 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		47D823FF2D7125F80092B139 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -239,34 +112,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		47D823F32D7125F80092B139 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		47D823FD2D7125F80092B139 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		47D823F92D7125F80092B139 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 47D823E52D7125F50092B139 /* QRScanner */;
-			targetProxy = 47D823F82D7125F80092B139 /* PBXContainerItemProxy */;
-		};
-		47D824032D7125F80092B139 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 47D823E52D7125F50092B139 /* QRScanner */;
-			targetProxy = 47D824022D7125F80092B139 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		47D824092D7125F80092B139 /* Debug */ = {
@@ -396,8 +242,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"QRScanner/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -421,8 +268,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"QRScanner/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -434,70 +282,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
-		47D8240F2D7125F80092B139 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 15.2;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.podichetty.QRScannerTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/QRScanner.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/QRScanner";
-			};
-			name = Debug;
-		};
-		47D824102D7125F80092B139 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 15.2;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.podichetty.QRScannerTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/QRScanner.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/QRScanner";
-			};
-			name = Release;
-		};
-		47D824122D7125F80092B139 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.podichetty.QRScannerUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = QRScanner;
-			};
-			name = Debug;
-		};
-		47D824132D7125F80092B139 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.podichetty.QRScannerUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = QRScanner;
 			};
 			name = Release;
 		};
@@ -518,24 +302,6 @@
 			buildConfigurations = (
 				47D8240C2D7125F80092B139 /* Debug */,
 				47D8240D2D7125F80092B139 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		47D8240E2D7125F80092B139 /* Build configuration list for PBXNativeTarget "QRScannerTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				47D8240F2D7125F80092B139 /* Debug */,
-				47D824102D7125F80092B139 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		47D824112D7125F80092B139 /* Build configuration list for PBXNativeTarget "QRScannerUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				47D824122D7125F80092B139 /* Debug */,
-				47D824132D7125F80092B139 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
