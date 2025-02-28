@@ -29,6 +29,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         let menu = NSMenu()
         menu.addItem(NSMenuItem(title: "Open QR Scanner", action: #selector(togglePopover), keyEquivalent: "o"))
+        menu.addItem(NSMenuItem(title: "Paste from Clipboard", action: #selector(pasteFromClipboard), keyEquivalent: "v"))
         menu.addItem(NSMenuItem(title: "Scan Screenshot", action: #selector(takeScreenshot), keyEquivalent: "s"))
         menu.addItem(NSMenuItem.separator())
         menu.addItem(NSMenuItem(title: "Quit", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
@@ -54,6 +55,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
     
+    @objc func pasteFromClipboard() {
+        guard let clipboardImage = NSPasteboard.general.readObjects(forClasses: [NSImage.self], options: nil)?.first as? NSImage else {
+            showNotification(title: "QR Scanner", message: "No image found in clipboard")
+            return
+        }
+        processQRCode(in: clipboardImage)
+    }
+    
     func processQRCode(in image: NSImage) {
         let qrProcessor = QRCodeProcessor()
         qrProcessor.processQRCode(in: image) { result in
@@ -61,9 +70,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             case .success(let link):
                 NSPasteboard.general.clearContents()
                 NSPasteboard.general.setString(link, forType: .string)
-                
                 self.showNotification(title: "QR Code Detected", message: "Link copied to clipboard: \(link)")
-                
             case .failure(let error):
                 self.showNotification(title: "QR Scanner", message: error.localizedDescription)
             }

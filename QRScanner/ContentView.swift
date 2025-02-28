@@ -4,7 +4,6 @@ import UniformTypeIdentifiers
 struct ContentView: View {
     @State private var image: NSImage?
     @State private var result: String = "Scan a QR code to see results here"
-    @State private var isDarkMode: Bool = false
     @State private var showCopiedMessage: Bool = false
     @Environment(\.colorScheme) var systemColorScheme
     
@@ -44,7 +43,7 @@ struct ContentView: View {
                     return true
                 }
                 
-                VStack(spacing: 10) {
+                VStack(spacing: 4) {
                     Text(result)
                         .frame(maxWidth: .infinity)
                         .padding()
@@ -95,28 +94,15 @@ struct ContentView: View {
                 .padding(.bottom)
             }
             .padding()
-            
-            Button(action: {
-                isDarkMode.toggle()
-                applyAppearance()
-            }) {
-                Image(systemName: isDarkMode ? "sun.max.fill" : "moon.fill")
-                    .font(.system(size: 16))
-            }
-            .buttonStyle(PlainButtonStyle())
-            .padding(8)
         }
         .frame(minWidth: 400, minHeight: 450)
-        .onAppear {
-            isDarkMode = systemColorScheme == .dark
-        }
     }
     
-    // MARK: - Screenshot Function
     private func takeScreenshot() {
         let task = Process()
         task.launchPath = "/usr/sbin/screencapture"
         task.arguments = ["-i", "-c"]
+        
         task.terminationHandler = { process in
             if process.terminationStatus == 0 {
                 if let clipboardImage = NSPasteboard.general.readObjects(forClasses: [NSImage.self], options: nil)?.first as? NSImage {
@@ -129,6 +115,7 @@ struct ContentView: View {
                 print("Screenshot canceled or failed.")
             }
         }
+        
         do {
             try task.run()
         } catch {
@@ -136,7 +123,6 @@ struct ContentView: View {
         }
     }
     
-    // MARK: - QR Processing
     private func processImage(_ image: NSImage) {
         qrProcessor.processQRCode(in: image) { result in
             DispatchQueue.main.async {
@@ -150,11 +136,11 @@ struct ContentView: View {
         }
     }
     
-    // MARK: - Image Loading Methods
     private func openImage() {
         let panel = NSOpenPanel()
         panel.allowedContentTypes = [.png, .jpeg, .tiff, .bmp]
         panel.allowsMultipleSelection = false
+        
         panel.begin { response in
             if response == .OK, let url = panel.url, let nsImage = NSImage(contentsOf: url) {
                 DispatchQueue.main.async {
@@ -170,12 +156,8 @@ struct ContentView: View {
             self.result = "No image found in clipboard"
             return
         }
+        
         self.image = clipboardImage
         self.processImage(clipboardImage)
-    }
-    
-    // MARK: - Appearance
-    private func applyAppearance() {
-        NSApp.appearance = NSAppearance(named: isDarkMode ? .darkAqua : .aqua)
     }
 }
