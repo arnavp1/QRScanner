@@ -5,7 +5,6 @@ struct ContentView: View {
     @State private var image: NSImage?
     @State private var result: String = "Scan a QR code to see results here"
     @State private var showCopiedMessage: Bool = false
-    @Environment(\.colorScheme) var systemColorScheme
     
     private let qrProcessor = QRCodeProcessor()
     
@@ -81,7 +80,7 @@ struct ContentView: View {
                     }
                     .keyboardShortcut("o", modifiers: .command)
                     
-                    Button("Paste from Clipboard") {
+                    Button("Paste Image") {
                         pasteFromClipboard()
                     }
                     .keyboardShortcut("v", modifiers: .command)
@@ -95,7 +94,7 @@ struct ContentView: View {
             }
             .padding()
         }
-        .frame(minWidth: 400, minHeight: 450)
+        .frame(width: 400, height: 450)
     }
     
     private func takeScreenshot() {

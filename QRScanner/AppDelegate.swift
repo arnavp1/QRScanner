@@ -1,6 +1,5 @@
 import Cocoa
 import SwiftUI
-import UserNotifications
 
 class AppDelegate: NSObject, NSApplicationDelegate {
     var statusItem: NSStatusItem?
@@ -9,8 +8,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func applicationDidFinishLaunching(_ notification: Notification) {
         setupMenuBar()
-        registerGlobalShortcut()
-        requestNotificationPermission()
     }
     
     func setupMenuBar() {
@@ -48,19 +45,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
     
+    @objc func pasteFromClipboard() {
+        guard let clipboardImage = NSPasteboard.general.readObjects(forClasses: [NSImage.self], options: nil)?.first as? NSImage else {
+            print("No image found in clipboard")
+            return
+        }
+        processQRCode(in: clipboardImage)
+    }
+    
     @objc func takeScreenshot() {
         screenshotManager.captureScreenshot { [weak self] image in
             guard let image = image else { return }
             self?.processQRCode(in: image)
         }
-    }
-    
-    @objc func pasteFromClipboard() {
-        guard let clipboardImage = NSPasteboard.general.readObjects(forClasses: [NSImage.self], options: nil)?.first as? NSImage else {
-            showNotification(title: "QR Scanner", message: "No image found in clipboard")
-            return
-        }
-        processQRCode(in: clipboardImage)
     }
     
     func processQRCode(in image: NSImage) {
@@ -70,40 +67,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             case .success(let link):
                 NSPasteboard.general.clearContents()
                 NSPasteboard.general.setString(link, forType: .string)
-                self.showNotification(title: "QR Code Detected", message: "Link copied to clipboard: \(link)")
+                print("QR Code Detected: Link copied to clipboard: \(link)")
             case .failure(let error):
-                self.showNotification(title: "QR Scanner", message: error.localizedDescription)
+                print("QR Scanner error: \(error.localizedDescription)")
             }
         }
-    }
-    
-    func showNotification(title: String, message: String) {
-        let content = UNMutableNotificationContent()
-        content.title = title
-        content.body = message
-        
-        let request = UNNotificationRequest(
-            identifier: UUID().uuidString,
-            content: content,
-            trigger: nil
-        )
-        
-        UNUserNotificationCenter.current().add(request) { error in
-            if let error = error {
-                print("Error showing notification: \(error)")
-            }
-        }
-    }
-    
-    func requestNotificationPermission() {
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { granted, error in
-            if !granted {
-                print("Notification permission denied")
-            }
-        }
-    }
-    
-    func registerGlobalShortcut() {
-        print("Global shortcut registration would go here.")
     }
 }

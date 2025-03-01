@@ -7,8 +7,10 @@ struct QRScannerApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .fixedSize()
         }
         .windowStyle(HiddenTitleBarWindowStyle())
+        .windowResizability(.contentSize)
         
         Settings {
             SettingsView()
