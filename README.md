@@ -2,7 +2,7 @@
 
 QRScanner is a simple macOS app for scanning QR codes right from your desktop. It allows you to capture a screenshot containing a QR code, or open/paste an image to detect and copy the QR code link.
 
-![QR Scanner Screenshot](QRScanner_Screenshot.png)
+![QR Scanner Screenshot](QRScanner_Screenshot.png =250x250)
 
 ## Features
 
