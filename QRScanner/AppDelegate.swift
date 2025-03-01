@@ -26,7 +26,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         let menu = NSMenu()
         menu.addItem(NSMenuItem(title: "Open QR Scanner", action: #selector(togglePopover), keyEquivalent: "o"))
-        menu.addItem(NSMenuItem(title: "Paste from Clipboard", action: #selector(pasteFromClipboard), keyEquivalent: "v"))
+        menu.addItem(NSMenuItem(title: "Paste Image", action: #selector(pasteFromClipboard), keyEquivalent: "v"))
         menu.addItem(NSMenuItem(title: "Scan Screenshot", action: #selector(takeScreenshot), keyEquivalent: "s"))
         menu.addItem(NSMenuItem.separator())
         menu.addItem(NSMenuItem(title: "Quit", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))

@@ -3,7 +3,7 @@ import UniformTypeIdentifiers
 
 struct ContentView: View {
     @State private var image: NSImage?
-    @State private var result: String = "Scan a QR code to see results here"
+    @State private var result: String = "Scan a QR Code"
     @State private var showCopiedMessage: Bool = false
     
     private let qrProcessor = QRCodeProcessor()
@@ -65,6 +65,7 @@ struct ContentView: View {
                         }
                     
                     if showCopiedMessage {
+                        Spacer().frame(height: 10)
                         Text("Copied!")
                             .foregroundColor(.blue)
                             .padding(4)
