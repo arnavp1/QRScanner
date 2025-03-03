@@ -1,4 +1,4 @@
-# **QRScanner** 📷🔎  
+# **QRScanner**
 
 A **macOS** app for scanning QR codes right from your desktop. Capture a screenshot containing a QR code, or open/paste an image to detect and copy the QR code link.
 
@@ -31,6 +31,12 @@ A **macOS** app for scanning QR codes right from your desktop. Capture a screens
 1. **Download the DMG** from the Releases page.  
 2. **Drag & Drop** the `QRScanner.app` into your **Applications** folder.  
 3. **Grant Screen Recording Permission** when prompted (for taking screenshots).  
+
+---
+
+## **📄 License**
+
+This project is licensed under the **MIT License**.
 
 ---
 
